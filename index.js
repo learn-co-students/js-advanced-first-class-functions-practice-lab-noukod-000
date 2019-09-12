@@ -26,3 +26,15 @@ function driversByName(drivers){
   } );
   return newArray.push(drivers);
 }
+
+function totalRevenue(drivers){
+  const reduceRevenue = function (agg,el,i,arr) {
+      return agg + el.revenue;
+  }
+  return drivers.reduce(reduceRevenue,0);
+}
+
+
+function averageRevenue(drivers){
+    return totalRevenue(drivers) / drivers.length
+}
